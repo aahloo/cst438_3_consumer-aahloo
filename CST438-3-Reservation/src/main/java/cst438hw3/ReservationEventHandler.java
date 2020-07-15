@@ -8,13 +8,13 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 @RabbitListener(queues = "${queueName}")
 public class ReservationEventHandler {	// event receiver class
 	
-	private static final Logger Log = LoggerFactory.getLogger(ReservationEventHandler.class);
+	private static final Logger log = LoggerFactory.getLogger(ReservationEventHandler.class);
 	
 	@RabbitHandler
 	public void receive (String in) {
 		
 		System.out.println(in);
-		Log.info(" [ReservationEventHandler] Received '" + in + "'");
+		log.info(" [ReservationEventHandler] Received '" + in + "'");
 		
 	}
 }
